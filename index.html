@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aisha Hassan</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: pink;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #333;
+      color: pink;
+      padding: 0.7em 1em;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #444;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: pink;
+      padding: 0.8em 1em;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    header {
+      text-align: center;
+      padding: 3em 1em 1em;
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid pink;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2em 1em;
+    }
+
+    section {
+      margin-bottom: 2em;
+      background-color: #2b2b2b;
+      border-left: 4px solid pink;
+      padding: 1.5em;
+      border-radius: 8px;
+    }
+
+    section h2 {
+      color: pink;
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.9em;
+      border-top: 1px solid #444;
+    }
+
+    footer a {
+      color: pink;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 600px) {
+      header img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .logo {
+        font-size: 1em;
+      }
+
+      .dropbtn {
+        font-size: 0.95em;
+        padding: 0.6em;
+      }
+
+      .dropdown-content {
+        min-width: 120px;
+      }
+
+      section {
+        font-size: 0.95em;
+      }
+    }
+
+    /* Heart background animation */
+    .heart-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: float 8s infinite;
+      opacity: 0.4;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -5px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .heart:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 40%; animation-delay: 2s; }
+    .heart:nth-child(3) { left: 60%; animation-delay: 4s; }
+    .heart:nth-child(4) { left: 80%; animation-delay: 1s; }
+    .heart:nth-child(5) { left: 10%; animation-delay: 3s; }
+  </style>
+</head>
+<body>
+
+  <div class="heart-container">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+  <nav>
+    <div class="logo">Aisha Hassan</div>
+    <div class="dropdown">
+      <button class="dropbtn">My Journey ⯆</button>
+      <div class="dropdown-content">
+        <a href="#past">Past</a>
+        <a href="#present">Present</a>
+        <a href="#future">Future</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <img src="/IMG-20250601-WA0049_1 (1).jpg" alt="Aisha Hassan" />
+  </header>
+
+  <main>
+    <section id="past" data-aos="fade-up">
+      <h2>Past</h2>
+      <p>
+        I had no foundation in Computer Science save for the little things I learnt in primary and secondary school.
+        I was more interested in Literary works and histories until external forces pushed me into doing computer science.
+        At first, I didn't enjoy it but it slowly grew on me and I started to appreciate it. I started tinkering with graphic designing,
+        making designs for fun. I started with phone wallpapers and went into invitations too.
+      </p>
+    </section>
+
+    <section id="present" data-aos="fade-up" data-aos-delay="100">
+      <h2>Present</h2>
+      <p>
+        I became interested in programming and coding after a course assignment and started learning HTML, CSS and JavaScript.
+        I am still learning and haven't perfected it yet.
+      </p>
+    </section>
+
+    <section id="future" data-aos="fade-up" data-aos-delay="200">
+      <h2>Future</h2>
+      <p>
+        I hope to perfect my programming knowledge and broaden my horizon on the field and to put out good projects.
+      </p>
+    </section>
+  </main>
+
+  <footer data-aos="fade-in" data-aos-delay="300">
+    <p>Contact me: <a href="mailto:aaishassann@gmail.com">aaishassann@gmail.com</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  </script>
+
+</body>
+</html>
