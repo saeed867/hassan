@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adewunmi David - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1a1a1d;
+      color: #fff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #f8e112;
+    }
+
+    .about, .timeline-item, .contact {
+      background-color: #292b2f;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .about.active, .timeline-item.active, .contact.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about p {
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timeline-item h2 {
+      margin-bottom: 10px;
+    }
+
+    .past { border-left: 5px solid #9b59b6; }
+    .present { border-left: 5px solid #27ae60; }
+    .future { border-left: 5px solid #e67e22; }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .contact button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      background: #f8e112;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #e5d40d;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="about">
+      <h1>About Me</h1>
+      <p>
+        Hi, I'm <strong>Adewunmi David</strong> — a talented and driven programmer with a passion for creating innovative solutions. With a strong foundation in computer science and a keen eye for detail, I design and build software that impacts real people.
+      </p>
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-item past">
+        <h2>My Past</h2>
+        <p>
+          As a child, I was fascinated by computers. My dad, a software engineer, introduced me to Python when I was 12. I built games, animations, and even a calculator app for class. That spark grew into a passion.
+        </p>
+        <p>
+          One of my big early projects was a machine learning system to analyze medical images. I worked with a remote team, debugging and improving code with lots of collaboration.
+        </p>
+      </div>
+
+      <div class="timeline-item present">
+        <h2>My Present</h2>
+        <p>
+          Today, I’m building cutting-edge applications using modern tools like JavaScript, React, and Python. I love solving complex problems, collaborating across time zones, and pushing boundaries in tech.
+        </p>
+      </div>
+
+      <div class="timeline-item future">
+        <h2>My Future</h2>
+        <p>
+          In 2030, I aim to be a global leader in AI, transforming healthcare, education, and sustainability. My work will improve lives through better language understanding and human-like communication.
+        </p>
+        <p>
+          I see myself building platforms used in hospitals, schools, and communities worldwide — empowering people through tech.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about, .timeline-item, .contact')
+      .forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
